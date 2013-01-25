@@ -1,0 +1,40 @@
+<idea-plugin version="2">
+  <id>net.tatablack.fswatcher</id>
+  <name>File system watcher</name>
+  <version>1.0</version>
+  <vendor email="angelo.tata@gmail.com">TataBlack</vendor>
+
+  <description><![CDATA[
+      The purpose of this plugin is to monitor a user-specified project folder for changes.<br>
+      On a per-project basis, the user can then execute applications in response to any detected change,
+      ]]></description>
+
+  <change-notes><![CDATA[
+      1.0 First release.
+      ]]>
+  </change-notes>
+
+  <!-- See http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges -->
+  <idea-version since-build="123.72"/>
+
+  <!-- See http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+    <project-components>
+        <component>
+            <implementation-class>net.tatablack.fswatcher.WatcherManager</implementation-class>
+        </component>
+    </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <projectConfigurable instance="net.tatablack.fswatcher.WatcherConfigurable" />
+  </extensions>
+</idea-plugin>
