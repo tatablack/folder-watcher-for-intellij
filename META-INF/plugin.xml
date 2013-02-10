@@ -20,13 +20,10 @@
   <!-- See http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products -->
   <depends>com.intellij.modules.platform</depends>
 
-  <application-components>
-    <!-- Add your application components here -->
-  </application-components>
-
     <project-components>
         <component>
             <implementation-class>net.tatablack.fswatcher.WatcherManager</implementation-class>
+            <loadForDefaultProject/>
         </component>
     </project-components>
 
@@ -35,6 +32,6 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <projectConfigurable instance="net.tatablack.fswatcher.WatcherConfigurable" />
+    <projectConfigurable instance="net.tatablack.fswatcher.ui.WatcherConfigurable" />
   </extensions>
 </idea-plugin>
