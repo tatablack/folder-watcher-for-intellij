@@ -1,32 +1,22 @@
 package net.tatablack.fswatcher.ui;
 
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.fileChooser.FileChooser;
-import com.intellij.openapi.fileChooser.FileChooserDescriptor;
-import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.TextFieldWithBrowseButton;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.ui.ToolbarDecorator;
-import com.intellij.ui.table.JBTable;
-import net.tatablack.fswatcher.WatcherManager;
+import net.tatablack.fswatcher.logging.SeparateLogger;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
 
 /**
  * @author: Angelo Tata
  */
 public class WatcherConfigurable extends SearchableConfigurable.Parent.Abstract implements Configurable.NoScroll {
-	private static final Logger logger = Logger.getInstance(WatcherConfigurable.class.getName());
+	private static final Logger logger = SeparateLogger.getInstance(WatcherConfigurable.class.getName());
 
 	private WatchersPanel watchersPanel;
 

@@ -5,12 +5,13 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import net.tatablack.fswatcher.fs.BulkFileListenerImpl;
+import net.tatablack.fswatcher.logging.SeparateLogger;
 import net.tatablack.fswatcher.state.Watcher;
 import net.tatablack.fswatcher.state.WatcherState;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.Collection;
 
 /**
  * @author: Angelo Tata
@@ -23,7 +24,8 @@ import java.util.*;
 		}
 )
 public class WatcherManager implements ProjectComponent, PersistentStateComponent<WatcherState> {
-	private static final Logger LOGGER = Logger.getInstance(WatcherManager.class.getName());
+	private static final Logger LOGGER = SeparateLogger.getInstance(WatcherManager.class.getName());
+
 	private final BulkFileListenerImpl vfsListener;
 
 	@NotNull private WatcherState state = new WatcherState();
@@ -33,6 +35,7 @@ public class WatcherManager implements ProjectComponent, PersistentStateComponen
 	public WatcherManager(Project project) {
 		this.project = project;
 		this.vfsListener = new BulkFileListenerImpl(project);
+
 	}
 
 	public static WatcherManager getInstance(Project project) {
@@ -40,7 +43,6 @@ public class WatcherManager implements ProjectComponent, PersistentStateComponen
 	}
 
 	public void initComponent() {
-		LOGGER.info("WatcherManager InitComponent");
 		this.vfsListener.start();
 	}
 

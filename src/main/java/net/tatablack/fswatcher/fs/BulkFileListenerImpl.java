@@ -10,6 +10,7 @@ import com.intellij.openapi.vfs.newvfs.events.*;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.vcsUtil.VcsUtil;
 import net.tatablack.fswatcher.WatcherManager;
+import net.tatablack.fswatcher.logging.SeparateLogger;
 import net.tatablack.fswatcher.state.Watcher;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -21,7 +22,7 @@ import java.util.List;
  * @author: Angelo Tata
  */
 public class BulkFileListenerImpl extends BulkFileListener.Adapter {
-	private static final Logger LOGGER = Logger.getInstance(BulkFileListenerImpl.class.getName());
+	private static final Logger LOGGER = SeparateLogger.getInstance(BulkFileListenerImpl.class.getName());
 	private final MessageBusConnection messageBusConnection;
 	private final Project project;
 

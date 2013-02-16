@@ -10,6 +10,7 @@ public class Watcher {
 	private boolean triggerOnFileAdded;
 	private boolean triggerOnFileDeleted;
 	private boolean triggerOnFileChanged;
+	private boolean disabled;
 
 	public String getName() {
 		return name;
@@ -57,5 +58,13 @@ public class Watcher {
 
 	public void setTriggerOnFileChanged(boolean triggerOnFileChanged) {
 		this.triggerOnFileChanged = triggerOnFileChanged;
+	}
+
+	public boolean isDisabled() {
+		return disabled;
+	}
+
+	public void setDisabled(boolean disabled) {
+		this.disabled = disabled;
 	}
 }
