@@ -36,6 +36,7 @@ public class WatcherManager implements ProjectComponent, PersistentStateComponen
 		this.project = project;
 		this.vfsListener = new BulkFileListenerImpl(project);
 
+		LOGGER.info("WatcherManager instantiated");
 	}
 
 	public static WatcherManager getInstance(Project project) {
@@ -43,6 +44,7 @@ public class WatcherManager implements ProjectComponent, PersistentStateComponen
 	}
 
 	public void initComponent() {
+		LOGGER.info("WatcherManager initComponent");
 		this.vfsListener.start();
 	}
 

@@ -12,6 +12,10 @@ public class Watcher {
 	private boolean triggerOnFileChanged;
 	private boolean disabled;
 
+	public Watcher(String name) {
+		this.name = name;
+	}
+
 	public String getName() {
 		return name;
 	}

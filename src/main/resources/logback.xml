@@ -4,7 +4,7 @@
         <file>${java.io.tmpdir}${file.separator}fs-watcher.log</file>
         <append>false</append>
         <encoder>
-            <pattern>%d %-5level [%thread] %logger{0}: %msg%n</pattern>
+            <pattern>%d %-5level [%thread] %logger{35}: %msg%n</pattern>
         </encoder>
     </appender>
 

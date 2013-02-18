@@ -16,7 +16,7 @@ import javax.swing.*;
  * @author: Angelo Tata
  */
 public class WatcherConfigurable extends SearchableConfigurable.Parent.Abstract implements Configurable.NoScroll {
-	private static final Logger logger = SeparateLogger.getInstance(WatcherConfigurable.class.getName());
+	private static final Logger LOGGER = SeparateLogger.getInstance(WatcherConfigurable.class.getName());
 
 	private WatchersPanel watchersPanel;
 
