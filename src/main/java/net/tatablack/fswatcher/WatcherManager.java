@@ -3,7 +3,6 @@ package net.tatablack.fswatcher;
 import com.intellij.openapi.components.*;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import net.tatablack.fswatcher.fs.BulkFileListenerImpl;
 import net.tatablack.fswatcher.logging.SeparateLogger;
 import net.tatablack.fswatcher.state.Watcher;
@@ -74,13 +73,6 @@ public class WatcherManager implements ProjectComponent, PersistentStateComponen
 
 	public Collection<Watcher> getWatchers() {
 		return this.state.watchers.values();
-	}
-
-	public void process(Watcher watcher, VFileEvent event) {
-		LOGGER.debug("Processing" + event.getClass().getName() + " for " + watcher.getName());
-		//ApplicationManager.getApplication().runOnPooledThread()
-		// https://github.com/t3hnar/CmdSupport/blob/master/src/ua/t3hnar/plugins/cmdsupport/actions/RunCmdScriptAction.scala
-		// http://code.google.com/p/shell-process/source/browse/trunk/src/com/google/idea/plugins/shellprocess/ShellProcess.java
 	}
 
 	@NotNull

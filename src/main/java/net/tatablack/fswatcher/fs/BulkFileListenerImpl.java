@@ -10,6 +10,7 @@ import com.intellij.openapi.vfs.newvfs.events.*;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.vcsUtil.VcsUtil;
 import net.tatablack.fswatcher.WatcherManager;
+import net.tatablack.fswatcher.exec.CommandExecutor;
 import net.tatablack.fswatcher.logging.SeparateLogger;
 import net.tatablack.fswatcher.state.Watcher;
 import org.jetbrains.annotations.NotNull;
@@ -48,7 +49,7 @@ public class BulkFileListenerImpl extends BulkFileListener.Adapter {
 			Collection<Watcher> watchers = manager.getWatchers();
 
 			for (Watcher watcher : watchers) {
-				manager.process(watcher, event);
+				CommandExecutor.process(watcher, event);
 			}
 		}
 	}
